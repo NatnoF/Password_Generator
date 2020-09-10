@@ -10,11 +10,11 @@ function generatePassword ()
 {
   //Variables; Password will be what is returned, userLength will hold a num, and the rest are booleans.
   var password = "";
-  var userLength;
-  var userLower;
-  var userUpper;
-  var userNumbers;
-  var userSpecial;
+  var userLength = 0;
+  var userLower = true;
+  var userUpper = true;
+  var userNumbers = true;
+  var userSpecial = true;
 
   userLength = prompt("How many characters do you want your password to contain?");
 
@@ -28,6 +28,29 @@ function generatePassword ()
   userUpper = confirm("Do you want to include upper case letters in your password? (OK = yes, Cancel = No)");
   userNumbers = confirm("Do you want to include numbers in your password? (OK = yes, Cancel = No)");
   userSpecial = confirm("Do you want to include special charactersd in your password? (OK = yes, Cancel = No)");
+
+  //Decision making for generatoring the user's desired password
+  if (userLower && userUpper && userNumbers && userSpecial)
+  {
+
+  }
+  else if (userLower && userUpper && userNumbers && !userSpecial)
+  {
+
+  }
+  else if (userLower && userUpper && !userNumbers && !userSpecial)
+  {
+
+  }
+  else if (userLower && !userUpper && !userNumbers && !userSpecial)
+  {
+
+  }
+  else
+  {
+    alert("You can't have a password with none of these options...");
+    return "Please Click Generate Password Again";
+  }
 
   
   return password;
