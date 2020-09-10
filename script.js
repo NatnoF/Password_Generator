@@ -30,7 +30,7 @@ function generatePassword ()
   userNumbers = confirm("Do you want to include numbers in your password? (OK = yes, Cancel = No)");
   userSpecial = confirm("Do you want to include special charactersd in your password? (OK = yes, Cancel = No)");
 
-  //Decision making for generating the user's desired password
+  //Decision making for the pool in which the password will be created from
   if (userLower)
   {
     newArray.push(...lowerCase);
@@ -53,6 +53,7 @@ function generatePassword ()
     return "Please Click Generate Password Again";
   }
 
+//Creating password
 for(var i = 0; i < userLength; i++)
 {
   var rand = Math.floor(Math.random()*newArray.length);
