@@ -8,9 +8,26 @@ var specialCharacters = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", 
 
 function generatePassword ()
 {
+  //Variables; Password will be what is returned, userLength will hold a num, and the rest are booleans.
   var password = "";
+  var userLength;
+  var userLower;
+  var userUpper;
+  var userNumbers;
+  var userSpecial;
 
+  userLength = prompt("How many characters do you want your password to contain?");
 
+  //Verifying the length of the password meets the condition of the assignment. Will continue asking for a length until it does.
+  while (userLength < 8 || userLength > 128)
+  {
+    userLength = prompt("Please choose an amount that's within 8 and 128 characters (inclusive)");
+  }
+
+  userLower = confirm("Do you want to include lower case letters in your password? (OK = yes, Cancel = No)");
+  userUpper = confirm("Do you want to include upper case letters in your password? (OK = yes, Cancel = No)");
+  userNumbers = confirm("Do you want to include numbers in your password? (OK = yes, Cancel = No)");
+  userSpecial = confirm("Do you want to include special charactersd in your password? (OK = yes, Cancel = No)");
 
   
   return password;
