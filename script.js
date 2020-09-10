@@ -18,7 +18,7 @@ function generatePassword ()
 
   userLength = prompt("How many characters do you want your password to contain?");
 
-  //Verifying the length of the password meets the condition of the assignment. Will continue asking for a length until it does.
+  //Verifying that the length of the password meets the condition of the assignment. Will continue asking for a length until it does.
   while (userLength < 8 || userLength > 128)
   {
     userLength = prompt("Please choose an amount that's within 8 and 128 characters (inclusive)");
@@ -29,7 +29,7 @@ function generatePassword ()
   userNumbers = confirm("Do you want to include numbers in your password? (OK = yes, Cancel = No)");
   userSpecial = confirm("Do you want to include special charactersd in your password? (OK = yes, Cancel = No)");
 
-  //Decision making for generatoring the user's desired password
+  //Decision making for generating the user's desired password
   if (userLower && userUpper && userNumbers && userSpecial)
   {
 
