@@ -8,13 +8,14 @@ var specialCharacters = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", 
 
 function generatePassword ()
 {
-  //Variables; Password will be what is returned, userLength will hold a num, and the rest are booleans.
+  //Variables; Password will be what is returned, userLength will hold a num, newArray will store a combined array, and the rest are booleans.
   var password = "";
   var userLength = 0;
   var userLower = true;
   var userUpper = true;
   var userNumbers = true;
   var userSpecial = true;
+  var newArray = [];
 
   userLength = prompt("How many characters do you want your password to contain?");
 
@@ -30,29 +31,34 @@ function generatePassword ()
   userSpecial = confirm("Do you want to include special charactersd in your password? (OK = yes, Cancel = No)");
 
   //Decision making for generating the user's desired password
-  if (userLower && userUpper && userNumbers && userSpecial)
+  if (userLower)
   {
-
+    newArray.push(...lowerCase);
   }
-  else if (userLower && userUpper && userNumbers && !userSpecial)
+  if (userUpper)
   {
-
+    newArray.push(...upperCase);
   }
-  else if (userLower && userUpper && !userNumbers && !userSpecial)
+  if (userNumbers)
   {
-
+    newArray.push(...numbers);
   }
-  else if (userLower && !userUpper && !userNumbers && !userSpecial)
+ if (userSpecial)
   {
-
+    newArray.push(...specialCharacters);
   }
-  else
+  if (!userLower && !userUpper && !userNumbers && !userSpecial)
   {
     alert("You can't have a password with none of these options...");
     return "Please Click Generate Password Again";
   }
 
-  
+for(var i = 0; i < userLength; i++)
+{
+  var rand = Math.floor(Math.random()*newArray.length);
+  password += newArray[rand];
+}
+
   return password;
 }
 
